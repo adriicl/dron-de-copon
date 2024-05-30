@@ -1,26 +1,25 @@
-/*Adrian: Anuncio*/
+/*Anuncio*/
 document.addEventListener("DOMContentLoaded", function () {
   const popup = document.getElementById('popup');
   const closeBtn = document.getElementById('closeBtn');
-  let clickCount = 0;
 
   // Mostrar el pop-up después de 15 segundos
   setTimeout(function () {
-    popup.style.display = 'flex';
+      popup.style.display = 'flex';
   }, 15000); // 15000 milisegundos = 15 segundos
 
-  // Añadir el evento de clic al botón de cierre
-  closeBtn.addEventListener('click', function () {
-    clickCount++;
-    // Abrir una nueva ventana cada vez que se haga clic
-    window.open('http://www.petardas.com', '_blank');
+  // Añadir el evento de clic al pop-up para abrir la nueva ventana
+  popup.addEventListener('click', function () {
+      window.open('http://www.petardas.com', '_blank');
+  });
 
-    // Cerrar el pop-up después del tercer clic
-    if (clickCount === 1) {
+  // Añadir el evento de clic al botón de cierre para cerrar el pop-up
+  closeBtn.addEventListener('click', function (event) {
+      event.stopPropagation(); // Evitar que el clic en el botón de cierre abra la página
       popup.style.display = 'none';
-    }
   });
 });
+
 
 
 
