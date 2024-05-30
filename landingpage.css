@@ -7,7 +7,7 @@ html * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/*Adrian: Popup anuncio*/
+/*Popup anuncio*/
 .popup {
     position: fixed;
     bottom: 20px;
