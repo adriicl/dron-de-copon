@@ -24,6 +24,123 @@ html * {
     display: none;
 }
 
+/*Boton del tema Pablo*/
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    margin-left: auto; 
+    margin-top: 30px;
+    margin-right: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Tema oscuro Pablo */
+.slider {
+    --background: #28096b;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    transition: .5s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px #fff000;
+    background: var(--background);
+    transition: .5s;
+}
+
+input:checked + .slider {
+    background-color: #522ba7;
+}
+
+input:checked + .slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px #fff000;
+}
+/* Cmabios para el tema oscuro a claro*/
+.dark-theme .header-landing.black  {
+    background-color: rgb(159, 187, 210);
+    
+}
+
+.dark-theme .header-landing .menu ul li a {
+    color: #000;
+}
+
+.dark-theme .backgroundimg  {
+    background-image: url(Imagenes/montañas2.jpg);
+}
+
+.dark-theme .aboutus-text {
+    color: #000;
+}
+.dark-theme .aboutus-section h1{
+    color: #000;
+}
+
+.dark-theme .slogan-section{
+    background-color:rgb(175, 189, 201) ;
+}
+
+.dark-theme .card{
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.dark-theme .card h3{
+    color: white;
+}
+
+.dark-theme .card p{
+    color: white;
+}
+
+.dark-theme .card input{
+    background-color: white;
+    color: black;
+}
+
+.dark-theme .gradient-bck {
+    background-image: linear-gradient(rgb(175, 189, 201), rgb(32, 158, 212), rgb(175, 189, 201));
+}
+
+
+.dark-theme .services-section h2{
+    color: #000;
+}
+
+.dark-theme .titulo-review{
+    color: #000;
+}
+
+.dark-theme .contact-section h2{
+    color: #000;
+}
+
+.dark-theme .final{
+    color: #000;
+}
+
+
 .close-btn {
     position: absolute;
     top: 5px;
