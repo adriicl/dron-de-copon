@@ -104,3 +104,38 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+/* Validación del formulario hecha por Cristina, que incluye validación de campos vacíos,que el teléfono sea números y que el 
+correo electrónico sea válido */
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // primero se valida y despúes envia los datos al servidor
+
+  const nombre = document.getElementById('nombre').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const gmail = document.getElementById('gmail').value.trim();
+  const mensaje = document.getElementById('mensaje').value.trim();
+
+  // Validacion del número de teléfono
+  const phoneRegex = /^[0-9]+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Validación de campos
+  if (!nombre) {
+      alert('Por favor, ingrese su nombre.');
+      return;
+  }
+  if (!phone || !phoneRegex.test(phone)) {
+      alert('Por favor, ingrese un número de teléfono válido.');
+      return;
+  }
+  if (!gmail || !emailRegex.test(gmail)) {
+      alert('Por favor, ingrese un correo electrónico válido.');
+      return;
+  }
+  if (!mensaje) {
+      alert('Por favor, ingrese un mensaje.');
+      return;
+  }
+
+  // Si  todo es correcto se envía al servidor
+  this.submit();
+});
